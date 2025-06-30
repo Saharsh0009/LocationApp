@@ -8,12 +8,8 @@ import android.Manifest
 class LocationUtils (val context: Context){
     fun hasLocationPermission( context: Context ): Boolean {
 
-        if(ContextCompat.checkSelfPermission(
+        return ContextCompat.checkSelfPermission(
                 context,
-                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ) {
-            return true
-        } else{
-            return false
-        }
+                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
     }
 }
